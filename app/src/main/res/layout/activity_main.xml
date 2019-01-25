@@ -7,7 +7,7 @@
         android:focusable="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.ResultActivity">
+        tools:context=".presentation.main.HistoryActivity">
 
     <include
             android:id="@+id/bottom"
@@ -19,7 +19,6 @@
     <android.support.v7.widget.RecyclerView
             android:id="@+id/gridRecyclerView"
             android:layout_above="@+id/bottom"
-            android:layout_below="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

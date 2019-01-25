@@ -4,5 +4,8 @@ interface MainInteraction {
 
     fun onCreate()
     fun onDestroy()
+    fun onRedefineTapped()
+    fun onVerifyTapped()
+    fun onHistoryTapped()
 
 }

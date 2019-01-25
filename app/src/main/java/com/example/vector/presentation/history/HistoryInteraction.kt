@@ -1,6 +1,6 @@
 package com.example.vector.presentation.main
 
-interface ResultInteraction {
+interface HistoryInteraction {
 
     fun onCreate()
     fun onDestroy()

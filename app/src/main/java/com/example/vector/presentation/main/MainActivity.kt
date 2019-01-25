@@ -3,6 +3,7 @@ package com.example.vector.presentation.main
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
+import android.view.View
 import com.example.vector.R
 import com.example.vector.infrastructure.NumbersServiceImplementation
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,5 +37,17 @@ class MainActivity : MainView, AppCompatActivity() {
     override fun onDestroy() {
         mainInteractor.onDestroy()
         super.onDestroy()
+    }
+
+    fun redefineTapped(v: View) {
+        mainInteractor.onRedefineTapped()
+    }
+
+    fun verifyTapped(v: View) {
+
+    }
+
+    fun historyTapped(v: View) {
+
     }
 }
