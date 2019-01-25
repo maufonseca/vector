@@ -1,4 +1,4 @@
-package com.example.vector.presentation.main
+package com.example.vector.presentation.history
 
 interface HistoryInteraction {
 

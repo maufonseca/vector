@@ -1,5 +1,8 @@
-package com.example.vector.presentation.main
+package com.example.vector.presentation.history
+
+import com.example.vector.entity.Result
 
 interface HistoryView {
 
+    fun updateTable(results: List<Result>)
 }

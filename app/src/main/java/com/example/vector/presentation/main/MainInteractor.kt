@@ -31,7 +31,9 @@ class MainInteractor(private val mainPresenter: MainPresentation,
     }
 
     private fun checkSum(sum: Int) {
-        if(CheckSumUtils.checkSum(numbers, sum)) mainPresenter.onExistence() else mainPresenter.onNotExistence()
+        with(CheckSumUtils.checkSum(numbers, sum)) {
+            if(existence) mainPresenter.onExistence() else mainPresenter.onNotExistence()
+        }
     }
 
     override fun onHistoryTapped() {}
