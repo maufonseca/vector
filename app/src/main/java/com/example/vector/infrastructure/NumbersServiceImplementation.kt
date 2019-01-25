@@ -1,5 +1,6 @@
 package com.example.vector.infrastructure
 
+import com.example.vector.presentation.main.MainInteraction
 import io.reactivex.Observable
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
@@ -9,7 +10,7 @@ class NumbersServiceImplementation(var api: Api? = null): NumbersService {
 
     init {
         val retrofit = Retrofit.Builder()
-        .baseUrl("https://api.github.com/")
+        .baseUrl("https://k9h52hczu2.execute-api.us-east-2.amazonaws.com/prod/")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()

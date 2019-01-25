@@ -1,5 +1,8 @@
 package com.example.vector.presentation.main
 
-class MainPresenter() {
+class MainPresenter(val mainView: MainView): MainPresentation {
 
+    override fun onNumbersArrived(numbers: List<Int>) {
+        mainView.updateNumbers(numbers)
+    }
 }

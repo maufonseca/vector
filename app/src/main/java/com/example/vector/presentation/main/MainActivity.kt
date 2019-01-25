@@ -3,32 +3,27 @@ package com.example.vector.presentation.main
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.vector.R
+import com.example.vector.infrastructure.NumbersServiceImplementation
+import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : MainView, AppCompatActivity() {
 
-    var mainPresenter: MainPresenter? = null
-    var mainInteractor: MainInteractor? = null
+    private val mainPresenter = MainPresenter(this)
+    private val mainInteractor = MainInteractor(mainPresenter, NumbersServiceImplementation())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        createScene()
-    }
-
-    private fun createScene() {
-        mainInteractor = MainInteractor()
-        mainPresenter = MainPresenter()
+        mainInteractor.onCreate()
     }
 
 
-
-    private fun destroyScene() {
-        mainPresenter = null
-        mainInteractor = null
+    override fun updateNumbers(numbers: List<Int>) {
+        text.text = numbers.toString()
     }
 
     override fun onDestroy() {
-        destroyScene()
+        mainInteractor.onDestroy()
         super.onDestroy()
     }
 }
