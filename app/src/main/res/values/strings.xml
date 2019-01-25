@@ -4,6 +4,9 @@
     <string name="button_history">Histórico de Consulta</string>
     <string name="button_redefine">Redefinir Lista</string>
     <string name="button_verify">Verificar</string>
+
+    <string name="error_bounds">Digite um número entre -197 e 197 para verificação</string>
+
     <string name="result_exist">existe</string>
     <string name="result_not_exist">não existe</string>
     <string name="result_see_list">ver\nlista</string>
