@@ -1,6 +1,5 @@
 package com.example.vector.infrastructure
 
-import com.example.vector.presentation.main.MainInteraction
 import io.reactivex.Observable
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit

@@ -1,11 +1,12 @@
 package com.example.vector.presentation.main
 
 import com.example.vector.infrastructure.NumbersService
-import com.example.vector.infrastructure.onDefaultSchedulers
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 
 class MainInteractor(private val mainPresenter: MainPresentation,
-                     private val numbersService: NumbersService): MainInteraction {
+                     private val numbersService: NumbersService): ResultInteraction {
 
     private var numbers: List<Int>? = null
     private val compositeDisposable = CompositeDisposable()
@@ -16,7 +17,8 @@ class MainInteractor(private val mainPresenter: MainPresentation,
 
     private fun subscribe() {
         compositeDisposable.add(numbersService.getNumbers()
-            .onDefaultSchedulers()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
                     numbers = it
