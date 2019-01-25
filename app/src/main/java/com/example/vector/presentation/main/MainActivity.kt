@@ -1,5 +1,6 @@
 package com.example.vector.presentation.main
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
@@ -48,6 +49,6 @@ class MainActivity : MainView, AppCompatActivity() {
     }
 
     fun historyTapped(v: View) {
-
+        startActivity(Intent(this, HistoryActivity::class.java))
     }
 }

@@ -6,9 +6,10 @@
     <string name="button_verify">Verificar</string>
     <string name="result_exist">existe</string>
     <string name="result_not_exist">não existe</string>
-    <string name="result_see_list">ver lista</string>
+    <string name="result_see_list">ver\nlista</string>
     <string name="result_title">RESULTADO</string>
     <string name="n_title">N</string>
     <string name="close">Fechar</string>
     <string name="back_button_text">&#60;</string>
+    <string name="next_text">&#62;</string>
 </resources>
