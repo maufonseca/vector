@@ -5,9 +5,10 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical"
         android:focusable="true"
+        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.main.HistoryActivity">
+        tools:context=".presentation.main.MainActivity">
 
     <include
             android:id="@+id/bottom"
@@ -17,11 +18,12 @@
             layout="@layout/bottom_options"/>
 
     <android.support.v7.widget.RecyclerView
-            android:id="@+id/gridRecyclerView"
+            android:paddingTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:layout_above="@+id/bottom"
+            android:id="@+id/gridRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
-
 
 </RelativeLayout>
