@@ -4,6 +4,8 @@ import com.example.vector.presentation.main.CheckSumUtils
 import org.junit.Test
 import org.junit.Assert.*
 
+// These unitary test will certify the core sum verification method work correctly
+
 class CheckSumUnitTest {
 
     @Test
