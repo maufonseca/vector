@@ -32,6 +32,7 @@ class TableAdapter(private val results: List<Result>,
                 (p0 as ResultViewHolder).numberText.text = currentResult.n.toString()
                 p0.resultText.text =
                         if(currentResult.existence) context.getString(R.string.result_exist) else context.getString(R.string.result_not_exist)
+                p0.cellLayout.tag = currentResult
             }
         }
     }
@@ -39,6 +40,7 @@ class TableAdapter(private val results: List<Result>,
     open class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     class HeaderViewHolder(itemView: View): TableAdapter.ViewHolder(itemView)
     class ResultViewHolder(itemView: View): TableAdapter.ViewHolder(itemView) {
+        val cellLayout = itemView
         val resultText = itemView.result_text
         val numberText = itemView.number
     }

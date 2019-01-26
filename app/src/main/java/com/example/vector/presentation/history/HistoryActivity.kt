@@ -8,8 +8,8 @@ import android.widget.Toast
 import com.example.vector.R
 import com.example.vector.entity.Result
 import com.example.vector.infrastructure.RealmServiceImplementation
-import com.example.vector.presentation.history.TableAdapter
 import kotlinx.android.synthetic.main.activity_history.*
+import kotlinx.android.synthetic.main.numbers_popup.*
 
 class HistoryActivity : HistoryView, AppCompatActivity() {
 
@@ -17,7 +17,7 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
     private lateinit var historyInteractor: HistoryInteraction
 
     private val results: MutableList<Result> = mutableListOf()
-    private val adapter = TableAdapter(results, this)
+    private lateinit var adapter: TableAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +35,7 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
 
     private fun setupTable() {
         historyRecyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = TableAdapter(results, this)
         historyRecyclerView.adapter = adapter
     }
 
@@ -54,6 +55,20 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
 
     fun clearHistoryTapped(v: View) {
         historyInteractor.onClearHistoryTapped()
+    }
+
+    override fun showNumbers() {
+        numbersLayout.visibility = View.VISIBLE
+    }
+
+    fun historyCellTapped(v: View) {
+        val tappedResult: Result = v.tag as Result
+        numbersTextView.text = tappedResult.numbers.toString()
+        showNumbers()
+    }
+
+    fun hideNumbersLayout(v: View) {
+        numbersLayout.visibility = View.GONE
     }
 
     override fun onDestroy() {
