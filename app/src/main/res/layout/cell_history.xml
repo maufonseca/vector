@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:foreground="?attr/selectableItemBackground"
         android:orientation="horizontal"
