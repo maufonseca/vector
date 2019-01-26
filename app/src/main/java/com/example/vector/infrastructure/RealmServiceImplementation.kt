@@ -3,6 +3,7 @@ package com.example.vector.infrastructure
 import com.example.vector.entity.RealmHistory
 import com.example.vector.entity.Result
 import io.realm.Realm
+import java.lang.Exception
 import java.util.*
 
 class RealmServiceImplementation: RealmService {
@@ -27,11 +28,21 @@ class RealmServiceImplementation: RealmService {
     override fun postResult(result: Result) {
         realm.beginTransaction()
         val history = realm.createObject(RealmHistory::class.java, UUID.randomUUID().toString())
-        history?.creation = result.creation
-        history?.n = result.n
-        history?.existence = result.existence
+        history?.let {
+            it.creation = result.creation
+            it.n = result.n
+            it.existence = result.existence
+        }
         realm.commitTransaction()
-        realm.close()
+    }
+
+    override fun clearHistory(): Boolean {
+        try {
+            realm.beginTransaction()
+            realm.deleteAll()
+            realm.commitTransaction()
+        } catch (e: Exception) { return false }
+        return true
     }
 
     override fun onDestroy() {

@@ -7,5 +7,6 @@ interface RealmService {
     fun onCreate()
     fun getHistory(): List<Result>
     fun postResult(result: Result)
+    fun clearHistory(): Boolean
     fun onDestroy()
 }

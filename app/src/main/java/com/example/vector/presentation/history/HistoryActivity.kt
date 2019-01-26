@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.widget.Toast
 import com.example.vector.R
 import com.example.vector.entity.Result
 import com.example.vector.infrastructure.RealmServiceImplementation
@@ -43,8 +44,16 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
         adapter.notifyDataSetChanged()
     }
 
+    override fun showMessage(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
     fun backTapped(v: View) {
         finish()
+    }
+
+    fun clearHistoryTapped(v: View) {
+        historyInteractor.onClearHistoryTapped()
     }
 
     override fun onDestroy() {

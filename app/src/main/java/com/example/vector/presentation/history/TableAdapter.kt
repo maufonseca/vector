@@ -26,7 +26,7 @@ class TableAdapter(private val results: List<Result>,
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         when(p1) {
-            0 -> {}
+            0 -> { /*do nothing*/ }
             else -> {
                 val currentResult = results[p1-1]
                 (p0 as ResultViewHolder).numberText.text = currentResult.n.toString()

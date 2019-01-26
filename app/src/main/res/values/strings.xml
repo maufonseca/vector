@@ -14,5 +14,6 @@
     <string name="n_title">N</string>
     <string name="close">Fechar</string>
     <string name="back_button_text">&#60;</string>
+    <string name="clear_history">Apagar</string>
     <string name="next_text">&#62;</string>
 </resources>
