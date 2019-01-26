@@ -19,7 +19,7 @@ class MainActivity : MainView, AppCompatActivity() {
     private lateinit var mainInteractor: MainInteraction
 
     private val numbers: MutableList<Int> = mutableListOf()
-    private val adapter = GridAdapter(numbers, this)
+    private lateinit var adapter: GridAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +36,7 @@ class MainActivity : MainView, AppCompatActivity() {
     }
 
     private fun setupGrid() {
+        adapter = GridAdapter(numbers, this)
         gridRecyclerView.layoutManager = GridLayoutManager(this, 4)
         gridRecyclerView.adapter = adapter
     }
