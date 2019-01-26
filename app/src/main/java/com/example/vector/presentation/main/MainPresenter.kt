@@ -19,6 +19,10 @@ class MainPresenter(private val mainView: MainView,
         mainView.showMessage(context.getString(R.string.error_bounds))
     }
 
+    override fun onListError() {
+        mainView.showMessage(context.getString(R.string.error_fetching_list))
+    }
+
     override fun onNotExistence() {
         mainView.showMessage(context.getString(R.string.result_not_exist))
         mainView.clearEditText()

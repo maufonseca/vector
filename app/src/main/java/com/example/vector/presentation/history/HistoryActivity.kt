@@ -33,7 +33,7 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
     }
 
     private fun setupScene() {
-        historyPresenter = HistoryPresenter(this)
+        historyPresenter = HistoryPresenter(this, this)
         historyInteractor = HistoryInteractor(historyPresenter, RealmServiceImplementation())
     }
 

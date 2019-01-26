@@ -1,8 +1,12 @@
 package com.example.vector.presentation.history
 
+import android.content.Context
+import com.example.vector.R
 import com.example.vector.entity.Result
 
-class HistoryPresenter(val historyView: HistoryView): HistoryPresentation {
+class HistoryPresenter(private val historyView: HistoryView,
+                       private val context: Context
+): HistoryPresentation {
 
     override fun onResultsArrived(results: List<Result>) {
         historyView.updateTable(results)
@@ -12,7 +16,7 @@ class HistoryPresenter(val historyView: HistoryView): HistoryPresentation {
         historyView.updateTable(listOf())
     }
 
-    override fun showMessage(message: String) {
-
+    override fun onOperationError() {
+        historyView.showMessage(context.getString(R.string.error_persistence))
     }
 }

@@ -10,6 +10,8 @@
     <string name="result_exist">existe</string>
     <string name="feedback_result_exist">existe: (%d + %d = %d)</string>
     <string name="result_not_exist">não existe</string>
+    <string name="error_fetching_list">Erro ao buscar números, verifique sua conexão com a internet!</string>
+    <string name="error_persistence">Erro na operação, tente novamente!</string>
     <string name="result_see_list">ver\nlista</string>
     <string name="result_title">RESULTADO</string>
     <string name="n_title">N</string>

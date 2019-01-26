@@ -11,7 +11,7 @@ class HistoryInteractor(private val historyPresenter: HistoryPresentation,
     }
 
     override fun onClearHistoryTapped() {
-        if (realmService.clearHistory()) historyPresenter.onHistoryCleared() else historyPresenter.showMessage("Erro ao limpar histórico")
+        if (realmService.clearHistory()) historyPresenter.onHistoryCleared() else historyPresenter.onOperationError()
     }
 
     override fun onDestroy() {

@@ -8,4 +8,5 @@ interface MainPresentation {
     fun onBoundsExceeded()
     fun onExistence(result: Result)
     fun onNotExistence()
+    fun onListError()
 }

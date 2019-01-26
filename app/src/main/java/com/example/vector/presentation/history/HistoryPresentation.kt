@@ -5,5 +5,5 @@ import com.example.vector.entity.Result
 interface HistoryPresentation {
     fun onResultsArrived(results: List<Result>)
     fun onHistoryCleared()
-    fun showMessage(message: String)
+    fun onOperationError()
 }

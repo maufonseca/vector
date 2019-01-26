@@ -28,7 +28,7 @@ class MainInteractor(private val mainPresenter: MainPresentation,
                     numbers = it
                     mainPresenter.onNumbersArrived(it)
                 },
-                { it.printStackTrace() }
+                { mainPresenter.onListError() }
             )
         )
     }
