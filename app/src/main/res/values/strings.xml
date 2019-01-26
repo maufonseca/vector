@@ -8,6 +8,7 @@
     <string name="error_bounds">Digite um número entre -197 e 197 para verificação</string>
 
     <string name="result_exist">existe</string>
+    <string name="feedback_result_exist">existe: (%d + %d = %d)</string>
     <string name="result_not_exist">não existe</string>
     <string name="result_see_list">ver\nlista</string>
     <string name="result_title">RESULTADO</string>

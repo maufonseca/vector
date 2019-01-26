@@ -35,7 +35,7 @@ class MainInteractor(private val mainPresenter: MainPresentation,
 
     private fun checkSum(sum: Int) {
         with(CheckSumUtils.checkSum(numbers, sum)) {
-            if(existence) mainPresenter.onExistence() else mainPresenter.onNotExistence()
+            if(existence) mainPresenter.onExistence(this) else mainPresenter.onNotExistence()
             realmService.postResult(this)
         }
     }

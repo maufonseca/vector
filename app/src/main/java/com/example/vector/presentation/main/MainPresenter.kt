@@ -2,6 +2,7 @@ package com.example.vector.presentation.main
 
 import android.content.Context
 import com.example.vector.R
+import com.example.vector.entity.Result
 
 class MainPresenter(private val mainView: MainView,
                     private val context: Context): MainPresentation {
@@ -23,8 +24,8 @@ class MainPresenter(private val mainView: MainView,
         mainView.clearEditText()
     }
 
-    override fun onExistence() {
-        mainView.showMessage(context.getString(R.string.result_exist))
+    override fun onExistence(result: Result) {
+        mainView.showMessage(context.getString(R.string.feedback_result_exist,result.numberA, result.numberB, result.n))
         mainView.clearEditText()
     }
 }
