@@ -1,64 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="16dp"
-    android:background="#A0f6f787"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".presentation.main.MainActivity">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="16dp"
+        android:background="#81D4FA"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".presentation.main.MainActivity">
 
     <TextView
-        android:text="@string/field_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+            android:text="@string/field_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/numberField"
-            android:maxLength="4"
-            android:textAlignment="center"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/box"
-            android:inputType="numberSigned"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="48dp"/>
+                android:id="@+id/numberField"
+                android:maxLength="4"
+                android:textAlignment="center"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/box"
+                android:inputType="numberSigned"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="52dp"/>
 
         <Button
-            android:backgroundTint="@android:color/holo_blue_dark"
-            android:textColor="@android:color/white"
-            android:layout_marginStart="8dp"
-            android:text="@string/button_verify"
-            android:textAllCaps="false"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:onClick="verifyTapped"/>
+                android:background="@drawable/ripple_blue_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="@android:color/white"
+                android:layout_marginStart="8dp"
+                android:textSize="18sp"
+                android:text="@string/button_verify"
+                android:textAllCaps="false"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:onClick="verifyTapped"/>
     </LinearLayout>
 
     <Button
-        android:backgroundTint="@android:color/holo_green_dark"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
-        android:text="@string/button_redefine"
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:onClick="redefineTapped"/>
+            android:background="@drawable/ripple_yellow_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/button_redefine"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:onClick="redefineTapped"/>
 
     <Button
-        android:backgroundTint="@android:color/holo_orange_dark"
-        android:textColor="@android:color/white"
-        android:textAllCaps="false"
-        android:text="@string/button_history"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:onClick="historyTapped"/>
+            android:background="@drawable/ripple_yellow_button"
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@android:color/white"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:text="@string/button_history"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:onClick="historyTapped"/>
 </LinearLayout>
