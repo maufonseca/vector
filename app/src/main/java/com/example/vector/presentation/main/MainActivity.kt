@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.vector.R
 import com.example.vector.infrastructure.NumbersServiceImplementation
+import com.example.vector.infrastructure.RealmServiceImplementation
 import com.example.vector.presentation.history.HistoryActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottom_options.*
@@ -31,7 +32,7 @@ class MainActivity : MainView, AppCompatActivity() {
 
     private fun setupScene() {
         mainPresenter = MainPresenter(this, this)
-        mainInteractor = MainInteractor(mainPresenter, NumbersServiceImplementation())
+        mainInteractor = MainInteractor(mainPresenter, NumbersServiceImplementation(), RealmServiceImplementation())
     }
 
     private fun setupGrid() {

@@ -6,6 +6,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.example.vector.R
 import com.example.vector.entity.Result
+import com.example.vector.infrastructure.RealmServiceImplementation
 import com.example.vector.presentation.history.TableAdapter
 import kotlinx.android.synthetic.main.activity_history.*
 
@@ -28,7 +29,7 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
 
     private fun setupScene() {
         historyPresenter = HistoryPresenter(this)
-        historyInteractor = HistoryInteractor(historyPresenter)
+        historyInteractor = HistoryInteractor(historyPresenter, RealmServiceImplementation())
     }
 
     private fun setupTable() {

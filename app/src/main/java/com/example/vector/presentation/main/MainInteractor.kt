@@ -2,12 +2,14 @@ package com.example.vector.presentation.main
 
 import android.text.Editable
 import com.example.vector.infrastructure.NumbersService
+import com.example.vector.infrastructure.RealmService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class MainInteractor(private val mainPresenter: MainPresentation,
-                     private val numbersService: NumbersService): MainInteraction {
+                     private val numbersService: NumbersService,
+                     private val realmService: RealmService): MainInteraction {
 
     private var numbers: List<Int> = emptyList()
     private val compositeDisposable = CompositeDisposable()

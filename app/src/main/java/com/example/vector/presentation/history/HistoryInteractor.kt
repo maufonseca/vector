@@ -1,6 +1,9 @@
 package com.example.vector.presentation.history
 
-class HistoryInteractor(private val historyPresenter: HistoryPresentation): HistoryInteraction {
+import com.example.vector.infrastructure.RealmService
+
+class HistoryInteractor(private val historyPresenter: HistoryPresentation,
+                        private val realmService: RealmService): HistoryInteraction {
 
     override  fun onCreate() {}
 
