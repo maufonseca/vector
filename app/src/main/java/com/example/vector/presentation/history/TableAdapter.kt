@@ -14,6 +14,9 @@ class TableAdapter(private val results: List<Result>,
                    private val context: Context): RecyclerView.Adapter<TableAdapter.ViewHolder>() {
 
 
+    override fun getItemViewType(position: Int): Int {
+        return if(position==0) 0 else 1
+    }
     override fun getItemCount(): Int = results.size + 1 //+1 to header
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -25,7 +28,6 @@ class TableAdapter(private val results: List<Result>,
         when(p1) {
             0 -> {}
             else -> {
-
                 val currentResult = results[p1-1]
                 (p0 as ResultViewHolder).numberText.text = currentResult.n.toString()
                 p0.resultText.text =

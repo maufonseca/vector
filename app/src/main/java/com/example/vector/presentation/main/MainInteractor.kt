@@ -15,6 +15,7 @@ class MainInteractor(private val mainPresenter: MainPresentation,
     private val compositeDisposable = CompositeDisposable()
 
     override  fun onCreate() {
+        realmService.onCreate()
         subscribe()
     }
 
@@ -35,6 +36,7 @@ class MainInteractor(private val mainPresenter: MainPresentation,
     private fun checkSum(sum: Int) {
         with(CheckSumUtils.checkSum(numbers, sum)) {
             if(existence) mainPresenter.onExistence() else mainPresenter.onNotExistence()
+            realmService.postResult(this)
         }
     }
 
@@ -57,5 +59,6 @@ class MainInteractor(private val mainPresenter: MainPresentation,
 
     override fun onDestroy() {
         compositeDisposable.dispose()
+        realmService.onDestroy()
     }
 }
