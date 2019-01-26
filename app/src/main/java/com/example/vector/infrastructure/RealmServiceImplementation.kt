@@ -19,7 +19,9 @@ class RealmServiceImplementation: RealmService {
 
         val realmList = realm.where(RealmHistory::class.java).findAll()
         realmList?.forEach {
-            response.add(Result(it.n, listOf(), it.existence, it.creation))
+            val numbers = mutableListOf<Int>()
+            numbers.addAll(it.numbers)
+            response.add(Result(it.n, numbers, it.existence, it.creation))
         }
 
         return response.sortedBy { it.creation }.reversed()
@@ -31,6 +33,7 @@ class RealmServiceImplementation: RealmService {
         history?.let {
             it.creation = result.creation
             it.n = result.n
+            it.numbers.addAll(result.numbers)
             it.existence = result.existence
         }
         realm.commitTransaction()
