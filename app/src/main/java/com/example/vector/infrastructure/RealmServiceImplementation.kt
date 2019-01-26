@@ -21,7 +21,7 @@ class RealmServiceImplementation: RealmService {
         realmList?.forEach {
             val numbers = mutableListOf<Int>()
             numbers.addAll(it.numbers)
-            response.add(Result(it.n, numbers, it.existence, it.creation))
+            response.add(Result(it.n, numbers, it.existence, it.numberA, it.numberB, it.creation))
         }
 
         return response.sortedBy { it.creation }.reversed()
@@ -35,6 +35,8 @@ class RealmServiceImplementation: RealmService {
             it.n = result.n
             it.numbers.addAll(result.numbers)
             it.existence = result.existence
+            it.numberA = result.numberA
+            it.numberB = result.numberB
         }
         realm.commitTransaction()
     }

@@ -11,7 +11,7 @@ class CheckSumUtils {
                 val x = sum - it
 
                 if(numbers.contains(x) and (x != it)) {
-                    return Result(sum, numbers, true)
+                    return Result(sum, numbers, true, x, it)
                 }
             }
             return Result(sum, numbers, false)

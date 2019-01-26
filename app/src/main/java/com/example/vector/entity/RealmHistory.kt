@@ -11,4 +11,6 @@ open class RealmHistory: RealmObject() {
     var numbers = RealmList<Int>()
     var n: Int = 0
     var existence: Boolean = false
+    var numberA: Int? = null
+    var numberB: Int? = null
 }

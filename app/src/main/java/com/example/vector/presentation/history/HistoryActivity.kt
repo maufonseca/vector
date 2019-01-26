@@ -43,8 +43,8 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
         historyRecyclerView.adapter = tableAdapter
     }
 
-    private fun setupGrid(numbers: List<Int>) {
-        gridAdapter = GridAdapter(numbers, this)
+    private fun setupGrid(result: Result) {
+        gridAdapter = GridAdapter(result.numbers, this, result)
         numbersGrid.layoutManager = GridLayoutManager(this, 4)
         numbersGrid.adapter = gridAdapter
     }
@@ -73,7 +73,7 @@ class HistoryActivity : HistoryView, AppCompatActivity() {
 
     fun historyCellTapped(v: View) {
         val tappedResult: Result = v.tag as Result
-        setupGrid(tappedResult.numbers)
+        setupGrid(tappedResult)
         showNumbers()
     }
 
