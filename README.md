@@ -24,8 +24,9 @@ Os resultados das verificações sempre são **armazenados em um histórico** pa
 2. Já no arquivo **MainActivityTest.kt** esncontra-se um teste instrumentado gravado com o Espresso que passa pelo fluxo do aplicativo e verifica que não ocorrem crashes.
 Ao executar o teste instrumentado é necessário um dispositivo real ou virtual conectado ao computador. O teste está ocorrendo sem crashes.
 
-## Features
+## Características técnicas
 
+1. [Clean Architecture](https://link.medium.com/ZIkR8dmzOT)
 1. [**Kotlin 1.3**](https://kotlinlang.org/)
 1. Chamada de serviço assíncrona para recuperar o vetor da internet utilizando [**Retrofit 2**](https://square.github.io/retrofit/) e [**RxAndroid 2**](https://github.com/ReactiveX/RxAndroid)
 3. Persistência do histórico em um banco de dados do dispositivo utilizando [**Realm 5**](https://realm.io/blog/realm-for-android/)
