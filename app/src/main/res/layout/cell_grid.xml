@@ -10,8 +10,9 @@
             android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
+            android:textSize="30sp"
             android:paddingTop="16dp"
             android:paddingBottom="16dp"
-            android:text="Hello World!"/>
+            android:text="45"/>
+
 </FrameLayout>
