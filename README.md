@@ -5,7 +5,11 @@ Quando o usuário entra o valor N e clica em "Verificar", o app calcula se a som
 Se existe a soma, o app exibe a palavra **"existe"** e mostra ao usuário quais são esses números.
 Se a soma não existe, o app exibe a mensagem **"não existe"**.
 Os resultados das verificações sempre são **armazenados em um histórico** para que o usuário possa consultar no futuro.
+
+## Screenshots
 ![Main Screen](images/main.png)
+![History Screen](images/history.png)
+![History Details](images/detail.png)
 
 ## Instruções de compilação
 1. Fazer o clone desse repositório
@@ -30,9 +34,4 @@ Ao executar o teste instrumentado é necessário um dispositivo real ou virtual 
 6. Feedback dos numeros somados para o usuário na hora da verificação e histórico
 7. Uso em retrato/paisagem
 8. Testes unitários [**JUnit 4**](https://junit.org/junit4/) e Instrumentados [**Espresso 3**](https://developer.android.com/training/testing/espresso/)
-
-## Screenshots
-![Main Screen](images/main.png)
-![History Screen](images/history.png)
-![History Details](images/detail.png)
 
